@@ -1,0 +1,19 @@
+# Standard Terraform ignore patterns
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Local secret variables
+*.tfvars
+*.tfvars.json
+
+# DO NOT ignore .terraform.lock.hcl!
+# .terraform.lock.hcl MUST be committed to Git for reproducible builds and security.
