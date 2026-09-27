@@ -1,27 +1,28 @@
+# ==============================================================================
+# BLOCK TYPE 3: variable block
+# Purpose: Declares configurable input parameters to make Terraform code reusable.
+# ==============================================================================
+
 variable "aws_region" {
-  description = "AWS region"
+  description = "AWS region where resources will be created"
   type        = string
-  default     = "ap-south-1"
+  default     = "us-east-1"
 }
 
-variable "ami_id" {
-  description = "AMI ID for the EC2 instance"
+variable "environment" {
+  description = "Deployment environment name (dev, staging, prod)"
   type        = string
+  default     = "dev"
+}
+
+variable "project_name" {
+  description = "Project identifier used in resource names and tags"
+  type        = string
+  default     = "blocks-demo"
 }
 
 variable "instance_type" {
-  description = "EC2 instance type"
+  description = "EC2 instance size"
   type        = string
   default     = "t3.micro"
-}
-
-variable "instance_name" {
-  description = "Name tag for EC2"
-  type        = string
-  default     = "terraform-ec2"
-}
-
-variable "key_name" {
-  description = "Existing EC2 key pair name"
-  type        = string
 }
